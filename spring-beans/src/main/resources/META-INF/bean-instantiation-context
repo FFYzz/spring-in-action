@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--    通过静态方法实例化 bean-->
+    <bean id="user-create-static-method" class="cn.ffyzz.spring.ioc.overview.domain.User"
+          factory-method="createUser"/>
+
+    <!--    通过实例方法实例化 bean-->
+    <bean id="user-create-instantiation-method" class="cn.ffyzz.spring.ioc.overview.domain.User"
+          factory-bean="user-factory" factory-method="createUser"/>
+
+    <!--    创建 user 的 factory-bean-->
+    <bean id="user-create-factory-bean" class="cn.ffyzz.spring.bean.factory.UserFactoryBean"/>
+
+    <!--    创建用户的 factory-->
+    <bean id="user-factory" class="cn.ffyzz.spring.bean.factory.DefaultUserFactory"/>
+
+
+</beans>

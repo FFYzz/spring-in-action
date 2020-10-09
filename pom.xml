@@ -10,6 +10,7 @@
     <modules>
         <module>java-beans-demo</module>
         <module>ioc-container-overview</module>
+        <module>spring-beans</module>
     </modules>
     <packaging>pom</packaging>
 

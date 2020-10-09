@@ -12,6 +12,13 @@ public class User {
 
     private String name;
 
+    public static User createUser() {
+        User user = new User();
+        user.setName("static user");
+        user.setId(20L);
+        return user;
+    }
+
     public Long getId() {
         return id;
     }
@@ -26,6 +33,10 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void initMethodByJavaAPI(){
+        name = name + " initMethodByJavaAPI";
     }
 
     @Override

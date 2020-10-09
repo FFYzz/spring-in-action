@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--    声明一个 ServiceLoaderFactoryBean-->
+    <bean id="userFactoryServiceLoader"
+          class="org.springframework.beans.factory.serviceloader.ServiceLoaderFactoryBean">
+        <property name="serviceType" value="cn.ffyzz.spring.bean.factory.UserFactory"/>
+    </bean>
+
+    <!--    声明一个 ServiceFactoryBean-->
+    <!--    只能返回一个具体的 UserFactory，而不是 ServiceLoader-->
+    <!--    并且返回的是 META-INF/services 中定义的第一个实现类-->
+    <bean id="userFactoryService"
+          class="org.springframework.beans.factory.serviceloader.ServiceFactoryBean">
+        <property name="serviceType" value="cn.ffyzz.spring.bean.factory.UserFactory"/>
+    </bean>
+
+    <bean id="userFactoryServiceList"
+          class="org.springframework.beans.factory.serviceloader.ServiceListFactoryBean">
+        <property name="serviceType" value="cn.ffyzz.spring.bean.factory.UserFactory"/>
+    </bean>
+
+</beans>
