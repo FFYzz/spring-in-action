@@ -11,6 +11,10 @@
         <module>java-beans-demo</module>
         <module>ioc-container-overview</module>
         <module>spring-beans</module>
+        <module>dependency-lookup</module>
+        <module>dependency-inject</module>
+        <module>dependency-source</module>
+        <module>bean-scope</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -20,6 +24,7 @@
 
     <dependencyManagement>
         <dependencies>
+
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-context</artifactId>

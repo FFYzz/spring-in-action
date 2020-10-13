@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset" name="Setter Dependency Injection Context" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/setter-dependency-injection-context.xml</file>
+        </fileset>
+        <fileset id="fileset2" name="Tmp" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/tmp.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
+  </component>
+</module>

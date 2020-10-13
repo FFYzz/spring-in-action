@@ -6,25 +6,17 @@
         <artifactId>spring-in-action</artifactId>
         <groupId>org.example</groupId>
         <version>1.0-SNAPSHOT</version>
-        <!--        依赖的循环顺序-->
-        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ioc-container-overview</artifactId>
+    <artifactId>dependency-lookup</artifactId>
 
     <dependencies>
 
-        <!--        Spring IOC 核心依赖 -->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>javax.annotation</groupId>
-            <artifactId>javax.annotation-api</artifactId>
-            <version>1.3.2</version>
-            <scope>compile</scope>
+            <groupId>org.example</groupId>
+            <artifactId>ioc-container-overview</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
 
     </dependencies>

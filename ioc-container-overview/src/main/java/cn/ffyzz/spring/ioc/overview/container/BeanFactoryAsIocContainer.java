@@ -2,6 +2,7 @@ package cn.ffyzz.spring.ioc.overview.container;
 
 import cn.ffyzz.spring.ioc.overview.domain.User;
 import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanFactoryUtils;
 import org.springframework.beans.factory.ListableBeanFactory;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
@@ -27,6 +28,9 @@ public class BeanFactoryAsIocContainer {
         System.out.println("读取到的 bean 的个数: " + beanDefinitionCount);
         // 依赖查找
         lookupCollectionByType(defaultListableBeanFactory);
+
+        // 这里应该会抛出异常，因为又不止一个 User 类型的 bean
+        BeanFactoryUtils.beanOfType(defaultListableBeanFactory, User.class);
     }
 
     private static void lookupCollectionByType(BeanFactory beanFactory) {

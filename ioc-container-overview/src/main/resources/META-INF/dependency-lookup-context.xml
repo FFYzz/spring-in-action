@@ -6,17 +6,21 @@
 
     <!-- services -->
 
-    <bean id="user" class="cn.ffyzz.spring.ioc.overview.domain.User" primary="true">
+    <bean id="user" class="cn.ffyzz.spring.ioc.overview.domain.User">
         <property name="id" value="1"/>
         <property name="name" value="jack"/>
+        <property name="city" value="HANGZHOU"/>
+        <property name="configFileLocation" value="classpath:/META-INF/user-config.properties"/>
+        <property name="workCities" value="HANGZHOU,SHANGHAI"/>
+        <property name="liveCities">
+            <list>
+                <value>HANGZHOU</value>
+                <value>BEIJING</value>
+            </list>
+        </property>
     </bean>
 
-    <bean id="user2" class="cn.ffyzz.spring.ioc.overview.domain.User">
-        <property name="id" value="2"/>
-        <property name="name" value="mike"/>
-    </bean>
-
-    <bean id="superuser" class="cn.ffyzz.spring.ioc.overview.domain.SuperUser" parent="user">
+    <bean id="superuser" class="cn.ffyzz.spring.ioc.overview.domain.SuperUser" parent="user" primary="true">
         <property name="address" value="shanghai"/>
     </bean>
 
