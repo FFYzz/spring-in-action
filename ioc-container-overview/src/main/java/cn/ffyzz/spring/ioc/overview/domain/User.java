@@ -32,6 +32,8 @@ public class User implements BeanNameAware {
 
     private transient String beanName;
 
+    private Company company;
+
     public static User createUser() {
         User user = new User();
         user.setName("static user");
@@ -87,6 +89,13 @@ public class User implements BeanNameAware {
         this.liveCities = liveCities;
     }
 
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
 
     public void initMethodByJavaAPI() {
         name = name + " initMethodByJavaAPI";
@@ -102,6 +111,7 @@ public class User implements BeanNameAware {
                 ", workCities=" + Arrays.toString(workCities) +
                 ", liveCities=" + liveCities +
                 ", beanName='" + beanName + '\'' +
+                ", company=" + company +
                 '}';
     }
 
