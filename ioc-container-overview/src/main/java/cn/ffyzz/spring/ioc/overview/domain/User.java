@@ -9,6 +9,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Properties;
 
 /**
  * @Title:
@@ -33,6 +34,10 @@ public class User implements BeanNameAware {
     private transient String beanName;
 
     private Company company;
+
+    private Properties context;
+
+    private String contextText;
 
     public static User createUser() {
         User user = new User();
@@ -97,6 +102,22 @@ public class User implements BeanNameAware {
         this.company = company;
     }
 
+    public Properties getContext() {
+        return context;
+    }
+
+    public void setContext(Properties context) {
+        this.context = context;
+    }
+
+    public String getContextText() {
+        return contextText;
+    }
+
+    public void setContextText(String contextText) {
+        this.contextText = contextText;
+    }
+
     public void initMethodByJavaAPI() {
         name = name + " initMethodByJavaAPI";
     }
@@ -112,6 +133,8 @@ public class User implements BeanNameAware {
                 ", liveCities=" + liveCities +
                 ", beanName='" + beanName + '\'' +
                 ", company=" + company +
+                ", context=" + context +
+                ", contextText='" + contextText + '\'' +
                 '}';
     }
 

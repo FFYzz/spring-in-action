@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+        https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean class="cn.ffyzz.spring.conversion.CustomizedPropertyRegistrarEditorDemo"/>
+
+    <bean id="propertiesToStringConverter" class="cn.ffyzz.spring.conversion.PropertiesToStringConverter"/>
+
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters" ref="propertiesToStringConverter"/>
+    </bean>
+
+    <util:properties id="ctx">
+        <prop key="id">100</prop>
+        <prop key="name">Tizs</prop>
+    </util:properties>
+
+    <bean id="user" class="cn.ffyzz.spring.ioc.overview.domain.User">
+        <property name="context">
+            <value>
+                hello = world
+                text = wang
+            </value>
+        </property>
+        <property name="contextText" ref="ctx"/>
+    </bean>
+
+
+</beans>
