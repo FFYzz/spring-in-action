@@ -24,7 +24,10 @@ public class ProfileDemo {
 //        environment.setDefaultProfiles("odd");
 
         // 设置激活的 Profile
-        environment.setActiveProfiles("even");
+//        environment.setActiveProfiles("even");
+
+        // --spring.profiles.active = even
+        // -Dspring.profiles.active=even
 
         // 启动 Spring 应用上下文
         context.refresh();
