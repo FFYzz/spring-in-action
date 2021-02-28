@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <aop:aspectj-autoproxy/>
+
+    <aop:config>
+    </aop:config>
+
+    <bean id="echoService" class="cn.ffyzz.spring.aop.overview.DefaultEchoServiceImpl"/>
+
+    <bean id="echoServiceMethodInterceptor"
+          class="cn.ffyzz.spring.aop.features.interceptor.EchoServiceMethodInterceptor"/>
+
+    <bean id="echoServiceProxyFactoryBean" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="targetName" value="echoService"/>
+        <!--        拦截器-->
+        <property name="interceptorNames">
+            <value>echoServiceMethodInterceptor</value>
+        </property>
+    </bean>
+
+
+</beans>
