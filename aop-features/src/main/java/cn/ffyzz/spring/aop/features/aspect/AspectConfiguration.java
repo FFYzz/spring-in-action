@@ -1,5 +1,7 @@
 package cn.ffyzz.spring.aop.features.aspect;
 
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -21,6 +23,11 @@ public class AspectConfiguration {
     private void anyPublicMethod() {
     }
 
+    @Around("anyPublicMethod()")
+    private Object aroundAnyPublicMethod(ProceedingJoinPoint pjp) throws Throwable {
+        System.out.println("@Around any public method..");
+        return pjp.proceed();
+    }
 
     /**
      * 具体的 join point 拦截动作
