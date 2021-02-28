@@ -10,7 +10,13 @@
 
     <aop:aspectj-autoproxy/>
 
+    <bean id="aspectXMLConfiguration" class="cn.ffyzz.spring.aop.features.aspect.AspectXMLConfiguration"/>
+
     <aop:config>
+        <aop:aspect id="AspectXMLConfiguration" ref="aspectXMLConfiguration">
+            <aop:pointcut id="anyPublicMethod" expression="execution(public * *(..))"/>
+            <aop:before method="beforeAnyPublicMethod" pointcut-ref="anyPublicMethod"/>
+        </aop:aspect>
     </aop:config>
 
     <bean id="echoService" class="cn.ffyzz.spring.aop.overview.DefaultEchoServiceImpl"/>
