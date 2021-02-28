@@ -22,6 +22,7 @@ public class AnnotationDependencyFieldInjectionDemo {
     /**
      * JDK 11 中已经移除
      * 需要额外添加依赖
+     * 可以多次注入
      */
     @Resource
     UserHolder userHolder2;

@@ -7,7 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 /**
  * @Title:
  * @Author: FFYzz
- * @Mail: cryptochen95 at gmail dot com
+ * @Mail: cryptochen95 at gmail dot comÎ
  * @Date: 2020/10/8
  */
 public class BeanInstantiationDemo {
@@ -18,9 +18,13 @@ public class BeanInstantiationDemo {
         User userCreateStaticMethod = beanFactory.getBean("user-create-static-method", User.class);
         User userCreateInstantiationMethod = beanFactory.getBean("user-create-instantiation-method", User.class);
         User userCreateFactoryBean = beanFactory.getBean("user-create-factory-bean", User.class);
+        User userCreateFactoryBean2 = beanFactory.getBean("user-create-factory-bean", User.class);
+
         System.out.println(userCreateInstantiationMethod);
         System.out.println(userCreateStaticMethod);
         System.out.println(userCreateFactoryBean);
+        System.out.println(userCreateFactoryBean2);
+        System.out.println(userCreateFactoryBean2 == userCreateFactoryBean2);
 
     }
 

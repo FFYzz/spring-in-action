@@ -1,6 +1,8 @@
 package cn.ffyzz.spring.ioc.overview.domain;
 
 import cn.ffyzz.spring.ioc.overview.annotation.Super;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 
 /**
  * @Title:
@@ -9,7 +11,7 @@ import cn.ffyzz.spring.ioc.overview.annotation.Super;
  * @Date: 2020/10/6
  */
 @Super
-public class SuperUser extends User{
+public class SuperUser extends User {
 
     private String address;
 

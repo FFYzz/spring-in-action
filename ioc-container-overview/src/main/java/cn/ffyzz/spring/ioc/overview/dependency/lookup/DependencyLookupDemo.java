@@ -5,6 +5,13 @@ import cn.ffyzz.spring.ioc.overview.domain.User;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.ListableBeanFactory;
 import org.springframework.beans.factory.ObjectFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.parsing.*;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationEvent;
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.annotation.ConfigurationClassPostProcessor;
+import org.springframework.context.support.AbstractXmlApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Map;
@@ -27,7 +34,6 @@ public class DependencyLookupDemo {
         lookupByType(beanFactory);
         lookupCollectionByType(beanFactory);
         lookupByAnnotation(beanFactory);
-
     }
 
     private static void lookupByAnnotation(BeanFactory beanFactory) {

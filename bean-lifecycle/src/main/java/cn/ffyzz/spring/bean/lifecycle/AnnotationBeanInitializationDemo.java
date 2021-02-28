@@ -1,5 +1,6 @@
 package cn.ffyzz.spring.bean.lifecycle;
 
+import cn.ffyzz.spring.application.context.lifecycle.CustomizedLifecycle;
 import cn.ffyzz.spring.ioc.overview.domain.User;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -17,6 +18,7 @@ public class AnnotationBeanInitializationDemo {
 
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         applicationContext.register(AnnotationBeanInitializationDemo.class);
+        applicationContext.register(CustomizedLifecycle.class);
         applicationContext.refresh();
         applicationContext.close();
 

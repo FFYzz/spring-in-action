@@ -4,8 +4,10 @@ import cn.ffyzz.spring.ioc.overview.domain.User;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryUtils;
 import org.springframework.beans.factory.ListableBeanFactory;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
+import org.springframework.context.ConfigurableApplicationContext;
 
 import java.util.Map;
 
@@ -20,6 +22,7 @@ public class BeanFactoryAsIocContainer {
     public static void main(String[] args) {
         // 创建一个 BeanFactory
         DefaultListableBeanFactory defaultListableBeanFactory = new DefaultListableBeanFactory();
+
         // 创建一个 Reader
         XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(defaultListableBeanFactory);
         String resourcePath = "classpath:/META-INF/dependency-injection-context.xml";

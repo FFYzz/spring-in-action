@@ -3,6 +3,8 @@ package cn.ffyzz.spring.ioc.overview.domain;
 import cn.ffyzz.spring.ioc.overview.enums.City;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.DisposableBean;
+import org.springframework.context.ApplicationEvent;
+import org.springframework.context.ApplicationListener;
 import org.springframework.core.io.Resource;
 
 import javax.annotation.PostConstruct;
@@ -143,12 +145,12 @@ public class User implements BeanNameAware {
         this.beanName = name + " " + id;
     }
 
-    @PostConstruct
+//    @PostConstruct
     public void init() {
         System.out.println("User Bean [" + beanName + "] 初始化...");
     }
 
-    @PreDestroy
+//    @PreDestroy
     public void destroy() {
         System.out.println("User Bean [" + beanName + "] 销毁中...");
     }

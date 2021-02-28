@@ -28,6 +28,8 @@
         <module>environment</module>
         <module>application-context-lifecycle</module>
         <module>questions</module>
+        <module>aop-overview</module>
+        <module>aop-features</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -61,6 +63,21 @@
                 <artifactId>spring-webmvc</artifactId>
                 <version>${spring.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jcl</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjrt</artifactId>
+                <version>1.9.6</version>
+            </dependency>
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>1.9.6</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -84,6 +101,10 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webflux</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jcl</artifactId>
         </dependency>
     </dependencies>
 

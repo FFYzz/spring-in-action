@@ -17,8 +17,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class BeanLifecycleDemo {
 
     public static void main(String[] args) {
-//        executeBeanFactory();
-        executeApplicationContext();
+        executeBeanFactory();
+//        executeApplicationContext();
     }
 
     private static void executeBeanFactory() {
