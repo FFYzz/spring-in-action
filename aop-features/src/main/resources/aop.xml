@@ -16,6 +16,7 @@
         <aop:aspect id="AspectXMLConfiguration" ref="aspectXMLConfiguration">
             <aop:pointcut id="anyPublicMethod" expression="execution(public * *(..))"/>
             <aop:before method="beforeAnyPublicMethod" pointcut-ref="anyPublicMethod"/>
+            <aop:around method="aroundAnyPublicMethod" pointcut-ref="anyPublicMethod"/>
         </aop:aspect>
     </aop:config>
 
