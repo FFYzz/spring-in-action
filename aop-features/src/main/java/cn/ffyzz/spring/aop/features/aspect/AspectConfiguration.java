@@ -1,11 +1,10 @@
 package cn.ffyzz.spring.aop.features.aspect;
 
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 import org.springframework.core.annotation.Order;
+
+import java.util.Random;
 
 /**
  * @Title:
@@ -37,6 +36,21 @@ public class AspectConfiguration {
     @Before("anyPublicMethod()")
     private void beforeAnyPublicMethod() {
         System.out.println("@Before any public method..");
+    }
+
+    @AfterReturning("anyPublicMethod()")
+    private void afterReturningAnyPublicMethod() {
+        System.out.println("@AfterReturning any public method..");
+    }
+
+    @After("anyPublicMethod()")
+    private void afterAnyPublicMethod() {
+        System.out.println("@After any public method..");
+    }
+
+    @AfterThrowing("anyPublicMethod()")
+    private void afterThrowingAnyPublicMethod() {
+        System.out.println("@AfterThrowing any public method..");
     }
 
 }
