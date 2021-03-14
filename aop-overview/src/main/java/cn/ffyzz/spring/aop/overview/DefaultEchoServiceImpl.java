@@ -1,5 +1,7 @@
 package cn.ffyzz.spring.aop.overview;
 
+import java.util.Random;
+
 /**
  * @Title:
  * @Author: FFYzz
@@ -8,7 +10,11 @@ package cn.ffyzz.spring.aop.overview;
  */
 public class DefaultEchoServiceImpl implements EchoService {
     @Override
-    public String echo(String message) {
+    public String echo(String message) throws RuntimeException{
+        Random random = new Random();
+        if (random.nextBoolean()) {
+            throw new RuntimeException("For purpose with xml..");
+        }
         return "[Echo]: " + message;
     }
 }

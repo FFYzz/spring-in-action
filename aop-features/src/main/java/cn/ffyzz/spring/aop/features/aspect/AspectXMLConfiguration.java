@@ -1,9 +1,6 @@
 package cn.ffyzz.spring.aop.features.aspect;
 
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
 
 /**
  * @Title:
@@ -22,5 +19,18 @@ public class AspectXMLConfiguration {
         System.out.println("@Around any public method.. " + pjp.getSignature());
         return pjp.proceed();
     }
+
+    private void afterReturningAnyPublicMethod() {
+        System.out.println("@AfterReturning any public method..");
+    }
+
+    private void afterAnyPublicMethod() {
+        System.out.println("@After any public method..");
+    }
+
+    private void afterThrowingAnyPublicMethod() {
+        System.out.println("@AfterThrowing any public method..");
+    }
+
 
 }
