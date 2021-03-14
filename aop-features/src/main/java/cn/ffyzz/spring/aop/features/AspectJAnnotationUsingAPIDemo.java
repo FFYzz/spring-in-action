@@ -1,6 +1,7 @@
 package cn.ffyzz.spring.aop.features;
 
 import cn.ffyzz.spring.aop.features.aspect.AspectConfiguration;
+import org.springframework.aop.AfterReturningAdvice;
 import org.springframework.aop.MethodBeforeAdvice;
 import org.springframework.aop.aspectj.annotation.AspectJProxyFactory;
 
@@ -28,8 +29,13 @@ public class AspectJAnnotationUsingAPIDemo {
         // 添加 Advice
         aspectJProxyFactory.addAdvice((MethodBeforeAdvice) (method, args1, target) -> {
             if ("put".equals(method.getName()) && args1.length == 2) {
-                System.out.printf("input key: %s, value: %s \n", args1[0], args1[1]);
+                System.out.printf("[MethodBeforeAdvice] input key: %s, value: %s \n", args1[0], args1[1]);
             }
+        });
+
+        aspectJProxyFactory.addAdvice((AfterReturningAdvice) (returnValue, method, args1, target) -> {
+            System.out.printf("[AfterReturningAdvice] input key: %s, new value: %s, old value = %s \n",
+                    args1[0], args1[1], returnValue);
         });
 
         Map<String, Object> proxy = aspectJProxyFactory.getProxy();
