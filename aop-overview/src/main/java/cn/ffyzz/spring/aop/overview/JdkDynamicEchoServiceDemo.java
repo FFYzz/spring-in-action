@@ -21,7 +21,7 @@ public class JdkDynamicEchoServiceDemo {
                 });
 
         EchoService echoService = (EchoService) proxy;
-        echoService.echo("Hello, World");
+        System.out.println(echoService.echo("Hello, World"));
     }
 
 }
